@@ -1,14 +1,25 @@
-# Тест проект newman
+# Test project newman
 
 
-## Запуск newman 
+## Start newman 
     https://www.npmjs.com/package/newman#junitxml-reporter
+    
+## Install
+	npm install -g newman
+	npm install -g newman-reporter-html
+	This installs Newman globally on your system allowing you to run it from anywhere.
+	If you want to install it locally, Just remove the -g flag.
+	brew install newman
 
-## Репорт newman-reporter
+## Start tests
+    newman run C:\test\test_collection.postman_collection.json -e C:\test\test_newman_env.postman_environment.json
+
+example postman collction ../projectDir/test/resources/*.json
+
+## Report newman-reporter
     https://www.npmjs.com/package/newman-reporter-html
 
-
-#### Кастомизация report:
+#### Custom report:
     https://github.com/postmanlabs/newman-reporter-html/blob/develop/lib/template-default.hbs
 #### Allure report
 
@@ -21,15 +32,3 @@
     Generating and Serving Allure report
     allure serve
     allure generate --clean
-
-## Установка
-	npm install -g newman
-	npm install -g newman-reporter-html
-	This installs Newman globally on your system allowing you to run it from anywhere.
-	If you want to install it locally, Just remove the -g flag.
-	brew install newman
-
-## Запуск тестов
-    newman run C:\test\test_collection.postman_collection.json -e C:\test\test_newman_env.postman_environment.json
-
-примеры коллекций в ../projectDir/test/resources/*.json
